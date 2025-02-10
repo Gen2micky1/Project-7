@@ -1,4 +1,4 @@
-@import url("Your Font of Choice");
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* || REST */
 * {
@@ -24,14 +24,16 @@ img {
   --GUNMETAL: #1C232B;
 
   /* TYPOGRAPHY */
+  --FF1: "Fraunces", serif;
+  --FF2: "Montserrat", serif;
 
 
   /* TEXT STYLES */
-  --AG-DISPLAY: bold 2rem/2rem ;
-  --AG-BODY: normal .875rem/1.4375rem ;
-  --AG-BUTTON: bold .875rem ;
-  --AG-OVERLINE: normal .75rem ;
-  --AG-MAIN-PRICE: normal .8125rem/1.4375rem;
+  --AG-DISPLAY: 700 2rem/2rem var(--FF1);
+  --AG-BODY: 500 .875rem/1.4375rem var(--FF2);
+  --AG-BUTTON: 700 .875rem var(--FF2);
+  --AG-OVERLINE: 500 .75rem var(--FF2);
+  --AG-MAIN-PRICE: 500 .8125rem/1.4375rem var(--FF2);
 
 }
 
@@ -57,12 +59,16 @@ img {
 /* || GENERAL STYLES */
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   min-height: 100vh;
   max-width: 100%;
   overflow-x: hidden;
+  display: grid;
+  place-content: center;
+  background-color: var(--CREAM-BG);
 }
 
 h1,
@@ -73,7 +79,176 @@ h2 {
   font-weight: normal;
 }
 
-a:any-link {
-  text-decoration: none;
-  color: black;
+/* PRODUCT CARD */
+.product-card {
+    max-width: 343px;
+    min-height: 611px;
+    background-color: var(--PURE-WHITE);
+    margin: 1.75rem 1rem;
+    border-radius: .625rem;
+    overflow: hidden;
+}
+
+/* PRODUCT CARD HERO IMAGE */
+.product-card__hero-image {
+    width: 100%;
+    height: 240px;
+    margin-bottom: 1.5rem;
+}
+
+.product-card__hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* PRODUCT CARD CONTANT */
+.product-card__content {
+    margin: 0rem 1.4375rem 1.5rem 1.5rem;
+}
+
+/* PRODUCT CARD TEXT CONTENT */
+.text-content__heading {
+    font: var(--AG-OVERLINE);
+    color: var(--AUROMETAL-SAURUS);
+    letter-spacing: .3125rem;
+    margin-bottom: .75rem;
+}
+
+.text-content__title {
+    font: var(--AG-DISPLAY);
+    color: var(--GUNMETAL);
+    margin-bottom: 1rem;
+}
+
+.text-content__subtitle {
+    font: var(--AG-BODY);
+    color: var(--AUROMETAL-SAURUS);
+    margin-bottom: 1.5rem;
+}
+
+/* PRODUCT CARD PRICE */
+.product-card__price {
+    margin-bottom: 1.25rem;
+}
+
+.product-card__price-categories {
+    width: 194px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 1.1875rem;
+}
+
+.price-categories__discount-price {
+    font: var(--AG-DISPLAY);
+    color: var(--DEEP-AQUAMARINE);
+}
+
+.price-categories__main-price {
+    font: var(--AG-MAIN-PRICE);
+    color: var(--AUROMETAL-SAURUS);
+    text-decoration-line: line-through;
+}
+
+/* PRODUCT CARD BUTTON */
+.product_card__button {
+    border: none;
+    outline: none;
+    width: 295px;
+    height: 48px;
+    background-color: var(--DEEP-AQUAMARINE);
+    border-radius: .5rem;
+    display: grid;
+    place-content: center;
+}
+
+.product-card__button-content {
+    width: 111px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+/* PRODUCT CARD BUTTON ICON */
+.product-card__button-content-icon {
+    width: 14.39px;
+    height: 16px;
+}
+
+.product-card__button-content-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* PRODUCT CARD BUTTON LABEL */
+.product-card__button-content-label {
+    font: var(--AG-BUTTON);
+    color: var(--PURE-WHITE);
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+    /* PRODUCT CARD */
+    .product-card {
+        max-width: 600px;
+        min-height: 450px;
+        display: flex;
+        margin: 10.9375rem auto;
+    }
+
+    /* PRODUCT CARD HERO IMAGE */
+    .product-card__hero-image {
+        max-width: 300px;
+        min-height: 450px;
+        margin-bottom: 0rem;
+    }
+
+    .product-card__hero-image .mobile {
+        display: none;
+    }
+
+    .responsive-image {
+        display: block;
+        width: 300px;
+        height: 450px;
+        
+    }
+
+    /* PRODUCT CARD CONTANT */
+    .product-card__content {
+        width: 236px;
+        margin: 2rem;
+    }
+
+    /* PRODUCT CARD TEXT CONTENT */
+    .text-content__heading {
+        margin-bottom: 1.25rem;
+    }
+
+    .text-content__title {
+        margin-bottom: 1rem;
+    }
+
+    .text-content__subtitle {
+        margin-bottom: 1.8125rem;
+    }
+
+    /* PRODUCT CARD BUTTON */
+    .product_card__button {
+        width: 236px;
+    }
+
+}
+
+/* DESKTOP */
+@media screen and (min-width: 992px) {
+    /* PRODUCT CARD BUTTON */
+    .product_card__button:hover,
+    .product_card__button:focus-visible {
+        background-color: var(--DEEP-AQUAMARINE-HOVER);
+    }
 }
